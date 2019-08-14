@@ -60,9 +60,9 @@ public class DataProcessorImpl implements DataProcessor {
 
 	private Collection<String> readDataFromFile() {
 		Collection<String> cities = new LinkedHashSet<>();
-		try (BufferedReader bufferedReader = new BufferedReader(new FileReader(new File(FileToRead)))) {
-			String line;
-			while ((line = bufferedReader.readLine()) != null) {
+		try (BufferedReader reader = new BufferedReader(new FileReader(new File(FileToRead)))) {
+			for (String line = reader.readLine(); line != null; line = reader.readLine()) {
+				System.out.println(line);
 				cities.add(line);
 			}
 		} catch (FileNotFoundException e) {
