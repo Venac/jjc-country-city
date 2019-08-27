@@ -12,12 +12,12 @@ public class DataValidatorImpl implements DataValidator{
 	
 	@Override
 	public boolean isAlpha(String text) {
-		return Pattern.compile(ALPHA).matcher(text).find();
+		return Pattern.compile(ALPHA).matcher(text).matches();
 	}
 
 	@Override
 	public boolean isDigit(String text) {
-		return Pattern.compile(DIGIT).matcher(text).find();
+		return Pattern.compile(DIGIT).matcher(text).matches();
 	}
 
 	@Override
