@@ -6,8 +6,8 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class DataValidatorImpl implements DataValidator{
-	private static final String ALPHA = "(?=.*[a-z])(?=.*[A-Z])";
-	private static final String DIGIT = "(?=.*\\d)";
+	private static final String ALPHA = "(.*[A-Z].*[a-z].*)|(.*[a-z].*[A-Z].*)"; // positive lookahead (?=.*[a-z])(?=.*[A-Z])
+	private static final String DIGIT = "(.*\\d.*)"; // positive lookahead (?=.*\\d)
 	private static final String ASCII = "^\\p{ASCII}*$";
 	
 	@Override
